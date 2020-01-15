@@ -7,6 +7,7 @@ VERSION = NoVersionGiven
 all: *.tex bibliography.bib
 	rubber -d -o pdf2ps -Wrefs -Wmisc $(name)
 	cp $(name).pdf arielszekely-cv.pdf
+	chmod o+r arielszekely-cv.pdf
 
 osx:
 	pdflatex $(name)
