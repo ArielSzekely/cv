@@ -4,16 +4,13 @@
 
 VERSION = NoVersionGiven
 
-all: *.tex bibliography.bib
-	rubber -d -o pdf2ps -Wrefs -Wmisc $(name)
+all: *.tex
+	pdflatex $(name)
+	pdflatex $(name)
 	cp $(name).pdf arielszekely-cv.pdf
 	chmod o+r arielszekely-cv.pdf
 
-osx:
-	pdflatex $(name)
-	bibtex $(name)
-	pdflatex $(name)
-	pdflatex $(name)
+osx: all
 
 clean:
 	rubber --clean -d -Wrefs -Wmisc $(name)
